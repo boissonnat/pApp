@@ -12,10 +12,41 @@ angular.module('pApp')
 
         // What happens when a player click on cell
         $scope.clickCell = function (event) {
-            var pawnPosition = angular.element(event.currentTarget);
-            alert($scope.currentPlayer.name + ' click on ' + pawnPosition.attr('class'));
-            nextPlayer($scope);
+            var pawnPosition = grabFirstInColumn(angular.element(event.currentTarget), $scope);
+
         };
+
+        // Set the background-color to the last bottom div in the clicked column
+        var grabFirstInColumn = function (elm, scope) {
+            var parentColElm = elm.parent();
+            if (checkColumnAvailable(parentColElm)) {
+                var currentElm = parentColElm.children().last();
+
+                while (currentElm.hasClass('taken')) {
+                    currentElm = currentElm.prev();
+                }
+                currentElm.addClass('taken ' + scope.currentPlayer.color);
+
+                // Current player has played, switch player
+                nextPlayer($scope);
+
+                return currentElm;
+            } else {
+                // Full column !
+                alert('Hum... Please try another column !');
+            }
+        };
+
+        var checkColumnAvailable = function(column){
+            var isFull = true;
+            angular.forEach(column.children(), function (childElm) {
+                if (!angular.element(childElm).hasClass('taken')) {
+                    isFull = false
+                }
+            });
+
+            return !isFull;
+        }
 
         // Set the currentPlayer with the next player.
         var nextPlayer = function (scope) {

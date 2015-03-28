@@ -36,3 +36,10 @@ sur chaque élément cliquable de la grille. C'est pas très DRY mais ca fera bi
 ### Switch to the next player
 Une fois que le joueur à cliquer sur une cellule, il faut que ca soit au joueur suivant de jouer, et ainsi de suite.
 Je crée un méthode nextPlayer().
+
+### Colorer la cellule cliquée par le joueur
+C'est le coup de la pièce qui tombe. Je vais pas faire l'animation pour l'instant, c'est pas dans les priorités.
+Je vais simplement coloré la case libre la plus basse de la colonne où à cliqué le joueur.
+Pour ca je vais utiliser la classe définie dans le joueur et ajouter aussi une classe ```taken``` pour
+différencier les case prises des cases libres.
+Je vais pas faire de jetons non plus, simplement changer le ```background-color``` de la div en question.

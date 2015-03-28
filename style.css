@@ -26,3 +26,11 @@ body {
         margin: 0 30px;
         text-align: center;
     }
+
+.red {
+    background-color: #8b0000;
+}
+
+.blue {
+    background-color: #00008b;
+}
