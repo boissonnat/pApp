@@ -58,3 +58,9 @@ Pour ca il faut vérifier 4 cas du plus simple au plus complex :
 Bon là ca mériterait peut être des tests... Pas le temps de regarder le testing avec AngularJS, on verra plus tard
 si j'ai du temps. En même temps c'est pas non plus incroyable comme algo.
 Je ferai plutard aussi la gestion d'une fin de partie. Pas important pour l'instant.
+
+### Conclusion
+Voilà, il est 16h00 pile ! j'ai un puissance 4 qui fonctionne.
+On est encore loin d'avoir tout ce qui est demandé mais le plus important est là, le client peut jouer au puissance 4 !
+
+La suite au prochain épisode, je dois fermer le laptop.
