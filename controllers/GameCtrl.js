@@ -13,8 +13,43 @@ angular.module('pApp')
         // What happens when a player click on cell
         $scope.clickCell = function (event) {
             var pawnPosition = grabFirstInColumn(angular.element(event.currentTarget), $scope);
+            var hasWin = checkForWin(pawnPosition, $scope);
+            if (hasWin) {
+                alert($scope.currentPlayer.name + ' win the game !');
+            }
+        };
+
+        // Check if the current player has win the game
+        var checkForWin = function (elm) {
+            var parentColumnElm = elm.parent();
+
+            if (checkVerticalWin(elm, parentColumnElm)) {
+                return true;
+            }
+            return false;
+        };
+
+        // Check if 4 pawn are aligned vertically
+        var checkVerticalWin = function (elm, parentColumnElm) {
+            var childCount = parentColumnElm.children().length;
+            var lastElm = parentColumnElm.children().last();
+            var currentClass = lastElm.hasClass('blue') ? 'blue' : 'red';
+            var count = 0;
+            var index = 0;
+            while ((count < 4 ) && (index < childCount)) {
+                if (lastElm.hasClass(currentClass)) {
+                    count++;
+                } else {
+                    count = 1;
+                    currentClass = currentClass === 'blue' ? 'red' : 'blue';
+                }
+                lastElm = lastElm.prev();
+                index++;
+            }
+            return count === 4
 
         };
+
 
         // Set the background-color to the last bottom div in the clicked column
         var grabFirstInColumn = function (elm, scope) {

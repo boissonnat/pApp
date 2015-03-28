@@ -43,3 +43,18 @@ Je vais simplement coloré la case libre la plus basse de la colonne où à cliq
 Pour ca je vais utiliser la classe définie dans le joueur et ajouter aussi une classe ```taken``` pour
 différencier les case prises des cases libres.
 Je vais pas faire de jetons non plus, simplement changer le ```background-color``` de la div en question.
+
+### Qui gagne ?
+Reste maintenant a vérifier après chaque coup si le joueur courant à gagner !
+Pour ca il faut vérifier 4 cas du plus simple au plus complex :
+
+- Alignement vertical : 4 jetons sur une même colonne
+- Alignement horizontal : 4 jetons sur une même ligne
+- Alignement diagonal : Dans ce cas il faut encore regarder  choses :
+
+   - Alignement du haut à droite vers le bas à gauche
+   - Alignement du haut à gauche vers le bas à droite.
+
+Bon là ca mériterait peut être des tests... Pas le temps de regarder le testing avec AngularJS, on verra plus tard
+si j'ai du temps. En même temps c'est pas non plus incroyable comme algo.
+Je ferai plutard aussi la gestion d'une fin de partie. Pas important pour l'instant.
