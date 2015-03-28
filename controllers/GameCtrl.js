@@ -12,10 +12,19 @@ angular.module('pApp')
 
         // What happens when a player click on cell
         $scope.clickCell = function (event) {
-            var pawnPosition = grabFirstInColumn(angular.element(event.currentTarget), $scope);
-            var hasWin = checkForWin(pawnPosition, $scope);
-            if (hasWin) {
-                alert($scope.currentPlayer.name + ' win the game !');
+            var clickedElm = angular.element(event.currentTarget);
+            if (checkColumnAvailable(clickedElm.parent())) {
+                var pawnPosition = grabFirstInColumn(clickedElm, $scope);
+                var hasWin = checkForWin(pawnPosition, $scope);
+                if (hasWin) {
+                    alert($scope.currentPlayer.name + ' win the game !');
+                } else {
+                    // Current player has played but not won, switch player
+                    nextPlayer($scope);
+                }
+            } else {
+                // Full column !
+                alert('Hum... Please try another column !');
             }
         };
 
@@ -151,25 +160,16 @@ angular.module('pApp')
         // Set the background-color to the last bottom div in the clicked column
         var grabFirstInColumn = function (elm, scope) {
             var parentColElm = elm.parent();
-            if (checkColumnAvailable(parentColElm)) {
-                var currentElm = parentColElm.children().last();
+            var currentElm = parentColElm.children().last();
 
-                while (currentElm.hasClass('taken')) {
-                    currentElm = currentElm.prev();
-                }
-                currentElm.addClass('taken ' + scope.currentPlayer.color);
-
-                // Current player has played, switch player
-                nextPlayer($scope);
-
-                return currentElm;
-            } else {
-                // Full column !
-                alert('Hum... Please try another column !');
+            while (currentElm.hasClass('taken')) {
+                currentElm = currentElm.prev();
             }
+            currentElm.addClass('taken ' + scope.currentPlayer.color);
+            return currentElm;
         };
 
-        var checkColumnAvailable = function(column){
+        var checkColumnAvailable = function (column) {
             var isFull = true;
             angular.forEach(column.children(), function (childElm) {
                 if (!angular.element(childElm).hasClass('taken')) {
