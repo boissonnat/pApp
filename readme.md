@@ -14,4 +14,7 @@ J'attaque par ce qui m'est le moins familier, la grille de jeu.
 J'ai bien vu que la grille devrait pouvoir être modifiable par les joueurs dans une seconde version.
 Pour l'instant, je vais aller au plus vite, je vais dessiner la grille en dur avec des ```<div>```. Plutôt des
 ```<div>``` qu'un tableau ca sera plus simple à rendre responsive. Pour l'instant je m'occupe pas du responsive.
- 
+
+### Définir des joueurs
+Je vais ajouter des joueurs, chaque joueur aura une couleure de jetons. Je pense qu'une ```Factory``` a sa place
+pour gérer ca, surtout si on envisage les parties online.
