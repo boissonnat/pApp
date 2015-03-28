@@ -1,0 +1,28 @@
+/* Font gris... */
+body {
+    background-color: #cccccc;
+}
+
+/* the grid */
+.grid-container {
+    margin: auto;
+    text-align: center;
+}
+
+    .grid-row{
+        display: inline-block;
+        margin:5px;
+    }
+    .grid-cell {
+        height: 60px;
+        width:  60px;
+        border: solid 1px #cccccc;
+        margin: 10px 0;
+        background-color: #ffffff;
+    }
+
+    div.inline {
+        display: inline-block;
+        margin: 0 30px;
+        text-align: center;
+    }
