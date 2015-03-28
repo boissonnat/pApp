@@ -18,3 +18,7 @@ Pour l'instant, je vais aller au plus vite, je vais dessiner la grille en dur av
 ### Définir des joueurs
 Je vais ajouter des joueurs, chaque joueur aura une couleure de jetons. Je pense qu'une ```Factory``` a sa place
 pour gérer ca, surtout si on envisage les parties online.
+
+### Un premier controller pour gérer le jeu
+Je vais créer un ```GameCtrl``` qui me permettra de gérer les interactions du joueur sur la grille.
+Je l'injecte dans la vue ```home.html``` grace à ngRoute !
