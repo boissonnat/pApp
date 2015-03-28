@@ -32,3 +32,7 @@ J'ajoute aussi dans le titre le nom des deux joueurs.
 ### Quand on clique sur une case ?
 Je veux récupérer le click sur un élément de la grille. Une première méthode simple est d'ajouter un ngClick
 sur chaque élément cliquable de la grille. C'est pas très DRY mais ca fera bien l'affaire.
+
+### Switch to the next player
+Une fois que le joueur à cliquer sur une cellule, il faut que ca soit au joueur suivant de jouer, et ainsi de suite.
+Je crée un méthode nextPlayer().

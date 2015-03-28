@@ -14,6 +14,17 @@ angular.module('pApp')
         $scope.clickCell = function (event) {
             var pawnPosition = angular.element(event.currentTarget);
             alert($scope.currentPlayer.name + ' click on ' + pawnPosition.attr('class'));
+            nextPlayer($scope);
         };
 
+        // Set the currentPlayer with the next player.
+        var nextPlayer = function (scope) {
+            if (scope.currentPlayer === scope.players['playerOne']) {
+                scope.currentPlayer = scope.players['playerTwo'];
+            } else {
+                scope.currentPlayer = scope.players['playerOne'];
+            }
+        }
+
     }]);
+
