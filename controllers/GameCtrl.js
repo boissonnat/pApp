@@ -9,4 +9,11 @@ angular.module('pApp')
 
         //Set playerOne as the default current player
         $scope.currentPlayer = $scope.players['playerOne'];
+
+        // What happens when a player click on cell
+        $scope.clickCell = function (event) {
+            var pawnPosition = angular.element(event.currentTarget);
+            alert($scope.currentPlayer.name + ' click on ' + pawnPosition.attr('class'));
+        };
+
     }]);

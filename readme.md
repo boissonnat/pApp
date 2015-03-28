@@ -28,3 +28,7 @@ Grace à la factory Players, injectée dans le controller, je vais créer à la 
 et prendre le joueur 1 comme étant le premier joueur à jouer.
 Pour la création des joueurs au travers de l'interface graphique, on verra plutard c'est pas important.
 J'ajoute aussi dans le titre le nom des deux joueurs.
+
+### Quand on clique sur une case ?
+Je veux récupérer le click sur un élément de la grille. Une première méthode simple est d'ajouter un ngClick
+sur chaque élément cliquable de la grille. C'est pas très DRY mais ca fera bien l'affaire.
