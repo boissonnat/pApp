@@ -22,3 +22,9 @@ pour gérer ca, surtout si on envisage les parties online.
 ### Un premier controller pour gérer le jeu
 Je vais créer un ```GameCtrl``` qui me permettra de gérer les interactions du joueur sur la grille.
 Je l'injecte dans la vue ```home.html``` grace à ngRoute !
+
+### Définir 2 joueurs
+Grace à la factory Players, injectée dans le controller, je vais créer à la main 2 joueurs par défaut
+et prendre le joueur 1 comme étant le premier joueur à jouer.
+Pour la création des joueurs au travers de l'interface graphique, on verra plutard c'est pas important.
+J'ajoute aussi dans le titre le nom des deux joueurs.
