@@ -26,6 +26,11 @@ angular.module('pApp')
             if (checkVerticalWin(elm, parentColumnElm)) {
                 return true;
             }
+
+            if (checkHorizontalWin(elm, parentColumnElm)) {
+                return true;
+            }
+
             return false;
         };
 
@@ -47,7 +52,25 @@ angular.module('pApp')
                 index++;
             }
             return count === 4
+        };
 
+        // Check if 4 pawn are aligned horizontally
+        var checkHorizontalWin = function (elm, parentColumnElm) {
+            // We need the index of the elm in the column
+            var childIndex = parentColumnElm.children().index(elm);
+            var currentClass = elm.hasClass('blue') ? 'blue' : 'red';
+            var count = 0;
+            angular.forEach($(".grid-row"), function (rowElm) {
+                // Iterate over each line and count div with the currentClass
+                rowElm = angular.element(rowElm).children().eq(childIndex);
+                if (rowElm.hasClass(currentClass)) {
+                    count++;
+                } else if (count < 4) {
+                    count = 0;
+                }
+
+            });
+            return count === 4
         };
 
 
