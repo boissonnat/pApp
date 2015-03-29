@@ -85,3 +85,8 @@ Je ne vais pas faire les stats de jeu maintenant, mais je vais quand même prép
 
 ### Création d'une partie
 Ajout d'un formulaire pour créer une partie : noms des joueurs et nombre de manche.
+
+### Recommencer une partie
+il faut pouvoir recommencer une nouvelle partie, ou la même partie que la partie précedente.
+J'ajoute 2 boutons en fin de partie. J'ajoute aussi du coup des infos sur le nombre de parties gagnées
+et le nombre de sets gagnés dans la partie.

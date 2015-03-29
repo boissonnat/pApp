@@ -14,6 +14,13 @@ angular.module('pApp')
             $scope.game = new Games($scope.playerOne, $scope.playerTwo, game.numberOfSets);
         };
 
+        $scope.restartSameGame = function(){
+            $scope.game.restart();
+        };
+
+        $scope.newGame = function(){
+            $scope.game = null;
+        };
 
         // What happens when a player click on cell
         $scope.clickCell = function (event) {

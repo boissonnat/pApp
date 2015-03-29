@@ -4,6 +4,7 @@ angular.module('pApp')
             this.name = name;
             this.color = color;
             this.numberSetsWin = 0;
+            this.numberGamesWin = 0;
         };
 
         Player.prototype.addSetWin = function(){

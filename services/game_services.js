@@ -14,10 +14,18 @@ angular.module('pApp')
             player.addSetWin();
             if (this.currentSet === this.numberSets) {
                 this.isFinnished = true
+                this.getWinner().numberGamesWin++;
             }else {
                 this.currentSet++;
             }
 
+        };
+
+        Game.prototype.restart = function(){
+            this.playerOne.numberSetsWin = 0;
+            this.playerTwo.numberSetsWin = 0;
+            this.isFinnished = false;
+            this.currentSet  = 1;
         };
 
         Game.prototype.getWinner = function(){
