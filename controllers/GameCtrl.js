@@ -1,14 +1,12 @@
 angular.module('pApp')
     .controller('GameCtrl', ['$scope', 'Players', function ($scope, Players) {
-        // Grab players through factory
-        $scope.players = Players.players;
 
         // Create default players
-        $scope.players['playerOne'] = {name: 'PlayerOne', color: 'blue'};
-        $scope.players['playerTwo'] = {name: 'PlayerTwo', color: 'red'};
+        $scope.playerOne = new Players('PlayerOne', 'blue');
+        $scope.playerTwo = new Players('PlayerTwo', 'red');
 
         //Set playerOne as the default current player
-        $scope.currentPlayer = $scope.players['playerOne'];
+        $scope.currentPlayer = $scope.playerOne;
 
         // What happens when a player click on cell
         $scope.clickCell = function (event) {
@@ -182,10 +180,10 @@ angular.module('pApp')
 
         // Set the currentPlayer with the next player.
         var nextPlayer = function (scope) {
-            if (scope.currentPlayer === scope.players['playerOne']) {
-                scope.currentPlayer = scope.players['playerTwo'];
+            if (scope.currentPlayer === scope.playerOne) {
+                scope.currentPlayer = scope.playerTwo;
             } else {
-                scope.currentPlayer = scope.players['playerOne'];
+                scope.currentPlayer = scope.playerOne;
             }
         }
 

@@ -66,3 +66,12 @@ On est encore loin d'avoir tout ce qui est demandé mais le plus important est l
 La suite au prochain épisode, je dois fermer le laptop.
 
 Une démo en ligne est disponible ici : [http://abnt.fr/pApp](http://abnt.fr/pApp)
+
+
+## Step 2 : Mettre un peu d'ordre
+On est dimanche, il est 21h30. Je me lance dans une nouvelle petite session pour cleaner un peu tout
+et m'approcher un peu plus de ce qui est demandé. Toujours pas de Canvas je pense.
+
+### Les factories
+Afin de pouvoir utiliser le puissance 4 en réseau, il va nous falloir un serveur. Et donc quelques requêtes
+Ajax. Il faut reprendre les factories pour qu'elles puissent accepter ce genre de chose.

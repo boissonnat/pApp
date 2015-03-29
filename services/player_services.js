@@ -1,8 +1,10 @@
 angular.module('pApp')
     .factory('Players', [function () {
-        var o = {
-            players: {}
+        var Player = function(name, color) {
+            this.name = name;
+            this.color = color;
         };
-        return o;
+
+        return Player;
     }]);
 
