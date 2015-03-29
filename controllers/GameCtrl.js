@@ -133,7 +133,7 @@ angular.module('pApp')
             var next = true;
 
             //Navigate top-left to bottom-right
-            while ((next) && (currentRowIndex > 0) && (currentChildIndex > 0)) {
+            while ((next) && (currentRowIndex <= 6) && (currentChildIndex <= 7)) {
 
                 if (currentElm.hasClass(currentClass)) {
                     // One found ! Keep going
@@ -170,7 +170,7 @@ angular.module('pApp')
 
             var next = true;
             //Navigate top-right to bottom-left
-            while ((next) && (currentRowIndex > 0) && (currentChildIndex > 0)) {
+            while ((next) && (currentRowIndex >= 0) && (currentChildIndex <= 6)) {
 
                 if (currentElm.hasClass(currentClass)) {
                     count++;
