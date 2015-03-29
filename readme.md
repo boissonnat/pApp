@@ -82,3 +82,6 @@ Il faut pouvoir gérer une partie sur plusieurs manches, qui devra aussi stocker
 Je ne vais pas faire les stats de jeu maintenant, mais je vais quand même préparer le terrain en ajoutant
  une factory pour gérer une partie. Du même coup j'ajoute la fin d'une partie et le fait qu'une partie puisse
  se jouer sur plusieurs manches.
+
+### Création d'une partie
+Ajout d'un formulaire pour créer une partie : noms des joueurs et nombre de manche.

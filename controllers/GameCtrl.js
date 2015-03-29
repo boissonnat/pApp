@@ -1,16 +1,20 @@
 angular.module('pApp')
     .controller('GameCtrl', ['$scope', 'Players', 'Games', function ($scope, Players, Games) {
 
-        // Create default players
-        $scope.playerOne = new Players('PlayerOne', 'blue');
-        $scope.playerTwo = new Players('PlayerTwo', 'red');
-
-        //Set playerOne as the default current player
-        $scope.currentPlayer = $scope.playerOne;
-
         // Create the game
-        $scope.game = new Games($scope.playerOne, $scope.playerTwo, 1);
+        $scope.createGame = function(game){
+            // Create players
+            $scope.playerOne = new Players(game.playerOne, 'blue');
+            $scope.playerTwo = new Players(game.playerTwo, 'red');
 
+            //Set playerOne as the default current player
+            $scope.currentPlayer = $scope.playerOne;
+
+            // Create the game
+            $scope.game = new Games($scope.playerOne, $scope.playerTwo, game.numberOfSets);
+        };
+
+        
         // What happens when a player click on cell
         $scope.clickCell = function (event) {
             var clickedElm = angular.element(event.currentTarget);

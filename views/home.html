@@ -2,6 +2,31 @@
 
 <h2 class="text-center">{{game.playerOne.name}} <small>vs</small> {{game.playerTwo.name}}</h2>
 
+<div class="col-md-6 col-md-offset-3"  ng-if="!game.isStarted">
+  <form novalidate class="simple-form" name="gameForm">
+    <div class="form-group">
+      <label>Player 1</label>
+      <input type="text" ng-model="game.playerOne" class="form-control" required/>
+    </div>
+    <div class="form-group">
+      <label>Player 2</label>
+      <input type="text" ng-model="game.playerTwo" class="form-control" required/>
+    </div>
+    <div class="form-group">
+      <label>Number of sets</label>
+      <input type="number" ng-model="game.numberOfSets" class="form-control" required/>
+    </div>
+    <div class="form-actions">
+      <input type="submit" ng-click="createGame(game)"
+             value="Start game"
+             class="btn btn-block btn-primary"
+             ng-disabled="gameForm.$invalid" />
+    </div>
+  </form>
+</div>
+
+
+
 <div class="grid-container" ng-if="((game.isStarted) && (!game.isFinnished))">
   <div class="grid-row">
     <div  class="grid-cell" ng-click="clickCell($event)" ></div>
