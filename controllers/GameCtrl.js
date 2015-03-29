@@ -14,7 +14,7 @@ angular.module('pApp')
             $scope.game = new Games($scope.playerOne, $scope.playerTwo, game.numberOfSets);
         };
 
-        
+
         // What happens when a player click on cell
         $scope.clickCell = function (event) {
             var clickedElm = angular.element(event.currentTarget);
@@ -44,7 +44,11 @@ angular.module('pApp')
         };
 
         $scope.getWinner = function() {
-            return $scope.game.getWinner();
+            if ($scope.game.getWinner()) {
+                return $scope.game.getWinner().name + 'wins the game !';
+            } else {
+                return 'Tie !';
+            };
         }
 
         // Check if the current player has win the game

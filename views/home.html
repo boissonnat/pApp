@@ -25,6 +25,27 @@
   </form>
 </div>
 
+<div class="row" ng-if="game.isStarted">
+  <div class="col-md-3 col-md-offset-2">
+    <div class="well" ng-class="{active: currentPlayer==game.playerOne}">
+      <h2 class="text-center" >{{game.playerOne.name}}</h2>
+      Sets won : {{game.playerOne.numberSetsWin}}
+    </div>
+  </div>
+
+  <div class="col-md-2">
+    <h2 class="text-center small" >VS</h2>
+    <p class="text-center">{{game.currentSet}} / {{game.numberSets}}</p>
+  </div>
+
+  <div class="col-md-3">
+    <div class="well" ng-class="{active: currentPlayer==game.playerTwo}">
+      <h2 class="text-center" >{{game.playerTwo.name}}</h2>
+      Sets won : {{game.playerTwo.numberSetsWin}}
+    </div>
+  </div>
+</div>
+
 
 
 <div class="grid-container" ng-if="((game.isStarted) && (!game.isFinnished))">
@@ -87,7 +108,7 @@
 </div>
 <div class="text-center"  ng-if="game.isFinnished">
   <h4>
-    {{getWinner().name}} wins the game !
+    {{getWinner()}}
   </h4>
 </div>
 

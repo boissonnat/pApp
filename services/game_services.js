@@ -23,6 +23,8 @@ angular.module('pApp')
         Game.prototype.getWinner = function(){
             if (this.playerOne.numberSetsWin > this.playerTwo.numberSetsWin) {
                 return this.playerOne;
+            } else if (this.playerOne.numberSetsWin === this.playerTwo.numberSetsWin){
+                return null;
             } else {
                 return this.playerTwo;
             }
