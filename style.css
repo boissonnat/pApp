@@ -36,6 +36,10 @@ body {
     background-color: #00008b;
 }
 
+.active {
+    background-color: #dff0d8;
+}
+
 @media (max-width: 430px) {
     .grid-cell {
         width: 30px;
