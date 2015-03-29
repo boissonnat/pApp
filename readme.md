@@ -95,7 +95,7 @@ et le nombre de sets gagnés dans la partie.
 Il est 22h15. Après 1h j'ai ajouté la gestion des parties et des joueurs. Il serait donc facile aujourd'hui
 de proposer une version en réseau du jeu pour cela il faudrait 2 choses :
 - Implémenter coté serveur les méthodes présentes dans les factories (et que ces factories appellent les méthodes de l'API)
-- Utiliser des Directives et le broadcast d'event pour rafraichir le jeu après que l'adversaire est joué.
+- Utiliser des Directives et le broadcast d'event pour rafraichir le jeu après que l'adversaire ai joué.
 
 IL manque surement aussi un peu de design, faire des pions rond, les faire descendre du haut de la grille
 jusqu'a la bonne position avec une transition etc... Je ne pense pas que l'intérêt du test soit là et je n'ai pas
