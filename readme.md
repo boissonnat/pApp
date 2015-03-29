@@ -75,3 +75,10 @@ et m'approcher un peu plus de ce qui est demandé. Toujours pas de Canvas je pen
 ### Les factories
 Afin de pouvoir utiliser le puissance 4 en réseau, il va nous falloir un serveur. Et donc quelques requêtes
 Ajax. Il faut reprendre les factories pour qu'elles puissent accepter ce genre de chose.
+
+
+### Gestion de la partie
+Il faut pouvoir gérer une partie sur plusieurs manches, qui devra aussi stocker des infos sur les joueurs.
+Je ne vais pas faire les stats de jeu maintenant, mais je vais quand même préparer le terrain en ajoutant
+ une factory pour gérer une partie. Du même coup j'ajoute la fin d'une partie et le fait qu'une partie puisse
+ se jouer sur plusieurs manches.

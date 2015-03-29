@@ -1,7 +1,8 @@
 <h1 class="text-center">Puissance 4</h1>
-<h2 class="text-center">{{playerOne.name}} <small>vs</small> {{playerTwo.name}}</h2>
 
-<div class="grid-container">
+<h2 class="text-center">{{game.playerOne.name}} <small>vs</small> {{game.playerTwo.name}}</h2>
+
+<div class="grid-container" ng-if="((game.isStarted) && (!game.isFinnished))">
   <div class="grid-row">
     <div  class="grid-cell" ng-click="clickCell($event)" ></div>
     <div  class="grid-cell" ng-click="clickCell($event)" ></div>
@@ -59,3 +60,10 @@
     <div  class="grid-cell" ng-click="clickCell($event)" ></div>
   </div>
 </div>
+<div class="text-center"  ng-if="game.isFinnished">
+  <h4>
+    {{getWinner().name}} wins the game !
+  </h4>
+</div>
+
+

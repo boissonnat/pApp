@@ -1,5 +1,5 @@
 angular.module('pApp')
-    .controller('GameCtrl', ['$scope', 'Players', function ($scope, Players) {
+    .controller('GameCtrl', ['$scope', 'Players', 'Games', function ($scope, Players, Games) {
 
         // Create default players
         $scope.playerOne = new Players('PlayerOne', 'blue');
@@ -8,6 +8,9 @@ angular.module('pApp')
         //Set playerOne as the default current player
         $scope.currentPlayer = $scope.playerOne;
 
+        // Create the game
+        $scope.game = new Games($scope.playerOne, $scope.playerTwo, 1);
+
         // What happens when a player click on cell
         $scope.clickCell = function (event) {
             var clickedElm = angular.element(event.currentTarget);
@@ -15,7 +18,17 @@ angular.module('pApp')
                 var pawnPosition = grabFirstInColumn(clickedElm, $scope);
                 var hasWin = checkForWin(pawnPosition, $scope);
                 if (hasWin) {
-                    alert($scope.currentPlayer.name + ' win the game !');
+                    alert($scope.currentPlayer.name + ' wins the set !');
+                    $scope.game.endSet($scope.currentPlayer);
+                    if (!$scope.game.isFinnished){
+                        // Set ended but not yet the game, clean the grid
+                        angular.forEach($(".grid-row"), function (rowElm) {
+                            // Iterate over each line and count div with the currentClass
+                            angular.forEach(angular.element(rowElm).children(), function (cellElm) {
+                                angular.element(cellElm).removeClass('taken red blue');
+                            })
+                        })
+                    }
                 } else {
                     // Current player has played but not won, switch player
                     nextPlayer($scope);
@@ -25,6 +38,10 @@ angular.module('pApp')
                 alert('Hum... Please try another column !');
             }
         };
+
+        $scope.getWinner = function() {
+            return $scope.game.getWinner();
+        }
 
         // Check if the current player has win the game
         var checkForWin = function (elm) {
